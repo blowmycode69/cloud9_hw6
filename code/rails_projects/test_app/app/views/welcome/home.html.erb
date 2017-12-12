@@ -1,0 +1,15 @@
+
+<% client = Twitter::REST::Client.new do |config|%>
+  <%config.consumer_key        = "dLhh5LtUgN9R2oa7AE7cLWjEz"%>
+  <%config.consumer_secret     = "CaL9CIRLW1b7oK4kVt7wOeH6WXbTvfhl8mRnB0Jq4ZDS76HMSW"%>
+  <%config.access_token        = "931207726390284289-FKZYWpwp7uipVmYRD2sqPzDLcLhWb5u"%>
+  <%config.access_token_secret = "au8BOPPEKE5MSQU5ybfK2rIYwTOgK47OpBrLH5U7dB7Bl"%>
+<%end%>
+
+<div id = "testimonies">
+<% client.search("team skull").take(3).each do |tweet|%>
+  <blockquote><%= tweet.text %></blockquote>
+  <div class = "from">&mdash; @<%= tweet.user.screen_name %></div>
+<%end%>
+</div>
+
